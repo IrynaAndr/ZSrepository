@@ -169,73 +169,6 @@
 </div>
 
 
-
-    <div id="content" style="margin-left: 250px; margin-top: -550px">
-    <h1>Appointment</h1>
-      <form class="" action="sc/appscr.php" method="post">
-    <div>
-      <h4>Set a <b>live</b> appointment</h4>
-      <p>Choose date and time:</p>
-      <input type="date" name="dateapp" min=<?php echo date('m-d-Y'); ?>/>
-
-      <label for="appt-time">Choose an appointment time: </label>
-      <input id="appt-time" type="time" name="timeapp" value="13:30">
-      <label for="appt-time">Choose doctor: </label>
-      <?php
-       $mysql0 = new mysqli('localhost','id13682932_hh','123123123-Asd','id13682932_hbd');
-       $sql0 = "SELECT * FROM Doctor";
-        $result_select = mysqli_query($mysql0, $sql0);
-        	echo "<select name ='doctor'>";
-        	echo "<option value='0'>Choose doctor</option>";
-        		while($object = mysqli_fetch_object($result_select)){
-        echo "<option value = '$object->Id_doctor' > $object->Surname </option>";}
-        	echo "</select>";
-          $mysql0 ->close();
-       ?>
-    </br>
-    <input type="hidden"  name="type" value="Live">
-      <input type="submit" value="Pay for appoinment" style="border: none !important; display:inline-block !important;text-align: center !important;padding: 7px 20px !important;
-    		color: #fff !important; font-size:16px !important; font-weight: 600 !important; font-family:OpenSans, sans-serif; cursor: pointer !important; border-radius: 2px !important;
-    		background: rgb(43,119,183) !important;"onmouseover="this.style.opacity='0.5';" onmouseout="this.style.opacity='1';">
-    		<img src="https://static.liqpay.ua/buttons/logo-small.png" name="btn_text"
-    			style="margin-right: 7px !important; vertical-align: middle !important;"/>
-    </div>
-  </form>
-  </br>
-    <div id="content" >
-
-    <div>
-      <form class="" action="sc/econscr.php" method="post">
-      <h4>Set an <b>online</b> consultation</h4>
-      <p>Choose date and time:</p>
-      <input type="date" name="dateapp" min=<?php echo date('m-d-Y'); ?>/>
-
-      <label for="appt-time">Choose an appointment time: </label>
-      <input id="appt-time" type="time" name="timeapp" value="13:30">
-      <label for="appt-time">Choose doctor: </label>
-      <?php
-       $mysql0 = new mysqli('localhost','id13682932_hh','123123123-Asd','id13682932_hbd');
-       $sql0 = "SELECT * FROM Doctor";
-        $result_select = mysqli_query($mysql0, $sql0);
-          echo "<select name ='doctor'>";
-          echo "<option value='0'>Choose doctor</option>";
-            while($object = mysqli_fetch_object($result_select)){
-        echo "<option value = '$object->Id_doctor' > $object->Surname </option>";}
-          echo "</select>";
-          $mysql0 ->close();
-       ?>
-    </br>
-    <input type="hidden"  name="type" value="Online">
-      <input type="submit" value="Pay for e-consultation" style="border: none !important; display:inline-block !important;text-align: center !important;padding: 7px 20px !important;
-        color: #fff !important; font-size:16px !important; font-weight: 600 !important; font-family:OpenSans, sans-serif; cursor: pointer !important; border-radius: 2px !important;
-        background: rgb(43,119,183) !important;"onmouseover="this.style.opacity='0.5';" onmouseout="this.style.opacity='1';">
-        <img src="https://static.liqpay.ua/buttons/logo-small.png" name="btn_text"
-          style="margin-right: 7px !important; vertical-align: middle !important;"/>
-    </div>
-    </form>
-    </div>
-  </br>
-
   <div>
     <?php
     $mysql = new mysqli('localhost','id13682932_hh','123123123-Asd','id13682932_hbd');
@@ -316,7 +249,6 @@
     });
 
 });
-
 
 </body>
 
