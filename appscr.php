@@ -27,9 +27,17 @@ if ($res>=1)
 }
 else
 {
+      echo "время доступно!";
 }
 $mysql3->close();
 */
+ $date_conscheck=$date_cons;
+$datenow=date('d-m-Y');
+$datecheck=(strtotime($datenow)>strtotime($date_conscheck));
+
+if($datecheck || $Id_doctor==0){
+    $dateavailable=false;
+}
 
 if ($dateavailable==true){
   $mysql = new mysqli('localhost','id13682932_hh','123123123-Asd','id13682932_hbd');
@@ -56,7 +64,9 @@ if ($dateavailable==true){
     $mysql1->close();
 
 
-error_reporting(0);
+
+
+    error_reporting(0);
     echo "Date is appropriate. Please pay now to confirm:";
     //echo '<script>location.replace("https://tridimensional-laun.000webhostapp.com/Calendar.php");</script>'; exit;
   $mysql4 = new mysqli('localhost','id13682932_hh','123123123-Asd','id13682932_hbd');
@@ -147,8 +157,7 @@ $res6=(strtotime($today1)>=strtotime($futureDate));
     $mysql2->query("INSERT INTO `Consultation`(`Id_doctor`, `Id_patient`, `Id_diagnosis`,`date_cons`,`Id_schedule`,`Time_start`,`Time_end`,`Type`)
     VALUES('$Id_doctor', '$Id_patient', '$Id_diagnosis','$date_cons','$Id_schedule','$Time_start','$Time_end','$Type')");
     $mysql2->close();
-    echo $dob_dm."</br>";
-    echo $date_cons_dm."</br>";
+   
   }
   else{
       echo "время не доступно, выберите другое!";
