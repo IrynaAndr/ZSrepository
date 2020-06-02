@@ -14,81 +14,286 @@
     <?php require 'head.php'; ?>
   </header>
 
-  <body>
-  <main role="main">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
-      <div class="container">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+
+      }
+      .survey {
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  text-align: center;
+}
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+}
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+}
+
+.btn-facebook {
+    background-color: #405D9D;
+    color: #fff;
+}
+.btn-twitter {
+    background-color: #42AEEC;
+    color: #fff;
+}
+.wrapper {
+    display: block;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* top layer */
+    z-index: 9999;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    /* full screen */
+    width: 100vw;
+    height: 100vh;
+    /* transparent black */
+    background: rgba(0, 0, 0, 0.7);
+    /* middle layer, i.e. appears below the sidebar */
+    z-index: 998;
+    opacity: 0;
+    /* animate the transition */
+    transition: all 0.5s ease-in-out;
+}
+/* display .overlay when it has the .active class */
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    /* top right corner of the sidebar */
+    top: 10px;
+    right: 10px;
+}
+
+.carousel {
+  margin-bottom: 4rem;
+}
+
+.col-md-5{
+  position: relative;
+  width: 50%;
+  max-width: 400px;
+}
+
+.col-md-5 order-md-1{
+  position: relative;
+  width: 50%;
+  max-width: 400px;
+}
+
+.bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay2 {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.col-md-5:hover .overlay2 {
+  opacity: 1;
+}
+
+.col-md-5 order-md-1:hover .overlay2 {
+  opacity: 1;
+}
+
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
 
 
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="https://i.ibb.co/nn0W1NN/1.jpg" alt="img1" style="width:100%;">
-      </div>
+<body>
+<main role="main">
 
-      <div class="item">
-        <img src="https://i.ibb.co/r5kdPwr/3.jpg" alt="img2" style="width:100%;">
-      </div>
+    <div class="slideshow-container">
 
-      <div class="item">
-        <img src="https://i.ibb.co/tqy095x/2.jpg" alt="img3" style="width:100%;">
-      </div>
-    </div>
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="https://i.ibb.co/BZW83DX/photo-2020-05-30-20-15-41.jpg" style="width:100%">
+</div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-  </div>
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="https://i.ibb.co/mTXj73m/photo-2020-05-30-20-12-59-2.jpg" style="width:100%">
+</div>
 
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="https://i.ibb.co/2kCGm16/photo-2020-05-30-20-12-59.jpg" style="width:100%">
+</div>
 
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+</main>
     <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    <div class="row featurette" style="width: 1500px">
+      <div class="col-md-7" style="margin-left: 50px; margin-top: 100px;">
+        <i><h2 class="featurette-heading">Affordable medical care for everyone</h2></i>
+        <p class="lead">You have the opportunity to take the test an unlimited number of times for free!<br/>
+        Only here you can also get an online consultation for free!</p>
+        <span class="text-muted" style="font-size: 20px; margin-left: 40px;"><i>"Treat the patient as you would like to be treated at the time of illness. First of all, do no harm."</i><br/>
+        <i style="margin-left: 700px">Hippocrates</i></span>
+
+
       </div>
+
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"></svg>
+        <img src = "img/врач1.jpg" alt = "" style= "width:500px; height:300px; margin-top: -400px;">
+        <div class="overlay2" style = "width: 500px">Our doctors: Vera Pavlovna and Ivan Petrovich</div>
       </div>
     </div>
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    <div class="row featurette" style="width: 1500px">
+      <div class="col-md-7 order-md-2" style = "margin-left: 150px; margin-top: 100px;">
+        <i><h2 class="featurette-heading">Qualified doctors</h2></i>
+        <p class="lead">Only we provide the services of highly qualified and experienced doctors who will put you the correct diagnosis and will gladly help you overcome your illness!</p>
+        <span class="text-muted" style="font-size: 20px; margin-left: 200px;"><i>"A physician should be a prudent man, beautiful, kind and humane."</i><br/>
+        <i style="margin-left: 700px">Hippocrates</i></span>
       </div>
       <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"></svg>
+            <img src = "img/врач2.jpg" alt = "" style= "width:500px; height:300px; margin-top: -370px; margin-left: 30px">
+         <div class="overlay2" style="width:500px; margin-left: 30px">Our doctors: Ihor Victorovich and Anna Pavlovna</div>
       </div>
     </div>
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    <div class="row featurette" style="width: 1500px">
+      <div class="col-md-7" style="margin-left: 50px; margin-top: 100px">
+        <i><h2 class="featurette-heading">Reliable test</h2></i>
+        <p class="lead">The test was developed by some of the best experts in this field, which is why you can trust the results! But remember that the answers must be truthful! Only when your answers reflect the truth, test results are correct! </p>
+        <span class="text-muted" style="font-size: 20px; margin-left: 150px;"><i>"Not only the doctor himself should use everything necessary, but the patient, and others, and all external circumstances should help the doctor in his work."</i><br/>
+        <i style="margin-left: 700px">Hippocrates</i></span>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"></svg>
+        <img src = "img/врач3.jpg" alt = "" style= "width:500px; height:300px; margin-top: -370px; ">
+         <div class="overlay2" style="width:500px">Our doctor Vira Olehivna</div>
       </div>
     </div>
-
     <hr class="featurette-divider">
  <div style="background: #cde4f7; padding-left: 40px ">
         </br>
